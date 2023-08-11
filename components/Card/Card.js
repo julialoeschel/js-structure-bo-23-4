@@ -1,4 +1,5 @@
 import { caesarCipher13 } from "../../utils/cipher.js";
+import { Button } from "../Button/Button.js";
 
 export function Card(author) {
   const card = document.createElement("article");
@@ -12,11 +13,7 @@ export function Card(author) {
   text.className = "card__text";
   text.textContent = caesarCipher13(author.text);
 
-  const button = document.createElement("button");
-  button.className = "card__button";
-  button.textContent = "Decipher";
-  button.addEventListener("click", handleDecipherButtonClick);
-
+  const button = Button(handleDecipherButtonClick);
   card.append(title, text, button);
 
   function handleDecipherButtonClick() {

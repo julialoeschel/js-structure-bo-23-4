@@ -1,4 +1,5 @@
 import { caesarCipher13 } from "../../utils/cipher.js";
+import { Button } from "../Button/Button.js";
 
 export function Header() {
   const headlineText = "Classical Authors";
@@ -9,12 +10,7 @@ export function Header() {
   const headline = document.createElement("h1");
   headline.textContent = caesarCipher13(headlineText);
 
-  const button = document.createElement("button");
-  button.textContent = "Decipher Headline";
-  button.type = "button";
-  button.className = "header__button";
-  button.addEventListener("click", handleDecipherHeadlineButtonClick);
-
+  const button = Button(handleDecipherHeadlineButtonClick);
   header.append(headline, button);
 
   function handleDecipherHeadlineButtonClick() {
