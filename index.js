@@ -1,6 +1,6 @@
 /** Authors */
 
-export const authors = [
+const authors = [
   {
     name: "Homer",
     text: "Homer is the author of the Iliad and the Odyssey.",
